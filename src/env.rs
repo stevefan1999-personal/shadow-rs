@@ -6,7 +6,11 @@ use crate::Format;
 use is_debug::build_channel;
 use core::collections::BTreeMap;
 use alloc::string::String;
+use alloc::vec::Vec;
+
+#[cfg(feature = "std")]
 use std::env;
+#[cfg(feature = "std")]
 use std::process::Command;
 
 #[derive(Default, Debug)]
