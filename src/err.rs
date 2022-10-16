@@ -1,6 +1,7 @@
 use core::convert::From;
 use core::fmt::{Display, Formatter};
 use alloc::string::{String, FromUtf8Error};
+use core::error::Error;
 
 #[cfg(feature = "std")]
 use std::error::Error;
