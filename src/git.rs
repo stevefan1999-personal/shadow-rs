@@ -5,6 +5,7 @@ use crate::err::*;
 use crate::Format;
 use core::collections::BTreeMap;
 use alloc::string::String;
+use alloc::vec::Vec;
 
 #[cfg(feature = "std")]
 use std::io::{BufReader, Read};
