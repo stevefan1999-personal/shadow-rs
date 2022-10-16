@@ -4,7 +4,8 @@ use crate::env::dep_source_replace::filter_cargo_tree;
 use crate::err::SdResult;
 use crate::Format;
 use is_debug::build_channel;
-use std::collections::BTreeMap;
+use core::collections::BTreeMap;
+use alloc::string::String;
 use std::env;
 use std::process::Command;
 
