@@ -1,3 +1,5 @@
+use alloc::string::ToString;
+
 #[derive(Debug)]
 pub enum CiType {
     Github,
