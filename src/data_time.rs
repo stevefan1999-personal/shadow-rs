@@ -1,4 +1,5 @@
 use crate::Format;
+#[cfg(feautre = "std")]
 use std::error::Error;
 #[cfg(feature = "tzdb")]
 use std::time::{SystemTime, UNIX_EPOCH};
@@ -50,7 +51,7 @@ impl DateTime {
         }
     }
 
-    #[cfg(not(feature = "tzdb"))]
+    #[cfg(and(feautre = "std", not(feature = "tzdb")))]
     pub fn local_now() -> Result<Self, Box<dyn Error>> {
         // Warning: Attempt to create a new OffsetDateTime with the current date and time in the local offset. If the offset cannot be determined, an error is returned.
         // At present, using it on MacOS return error. Use it with careful.
@@ -60,7 +61,7 @@ impl DateTime {
             .map_err(|e| e.into())
     }
 
-    #[cfg(feature = "tzdb")]
+    #[cfg(and(feature = "std", feature = "tzdb"))]
     pub fn local_now() -> Result<Self, Box<dyn Error>> {
         // expensive call, should be cached
         let time_zone_local = tzdb::local_tz().ok_or("Could not get local timezone")?;
