@@ -3,9 +3,14 @@ use crate::ci::CiType;
 use crate::data_time::DateTime;
 use crate::err::*;
 use crate::Format;
-use std::collections::BTreeMap;
+use core::collections::BTreeMap;
+use alloc::string::String;
+
+#[cfg(feature = "std")]
 use std::io::{BufReader, Read};
+#[cfg(feature = "std")]
 use std::path::Path;
+#[cfg(feature = "std")]
 use std::process::{Command, Stdio};
 
 pub const BRANCH: ShadowConst = "BRANCH";
