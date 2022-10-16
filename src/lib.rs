@@ -78,6 +78,7 @@
 //! [build-dependencies]
 //! shadow-rs = "{latest version}"
 //! ```
+#![cfg_attr(not(feature = "std"), no_std)]
 #![cfg_attr(feature = "document-features", doc = document_features::document_features!())]
 //!
 //! ### 2) Create `build.rs` file
