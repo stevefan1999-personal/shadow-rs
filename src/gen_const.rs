@@ -1,7 +1,7 @@
 macro_rules! gen_const {
     ($fn_name:ident,$fn_desc:expr,$fn_body:expr) => {
-        pub fn $fn_name() -> String {
-            format!("{}\n{}", $fn_desc, $fn_body)
+        pub fn $fn_name() -> alloc::string::String {
+            alloc::format!("{}\n{}", $fn_desc, $fn_body)
         }
     };
 }
