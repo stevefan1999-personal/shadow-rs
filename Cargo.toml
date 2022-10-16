@@ -21,7 +21,7 @@ all-features = true
 [dependencies]
 is_debug = { git = "https://github.com/stevefan1999-personal/rust_is_debug", branch = "patch-no-std", version = "1.0.1", features = ["alloc"] }
 const_format = "0.2.22"
-time = { version = "0.3.15", default-features = false, features = ["formatting", "local-offset", "parsing"] }
+time = { version = "0.3.15", default-features = false }
 
 #! Optional Dependencies:
 
@@ -34,7 +34,8 @@ tzdb = { version = "0.4.4", optional = true, default-features = false, features 
 document-features = { version = "0.2", optional = true }
 
 [features]
-default = ["git2", "tzdb"]
+default = ["git2", "tzdb", "time_std"]
+time_std = ["time/formatting", "time/local-offset", "time/parsing"]
 
 [workspace]
 members = ["example_shadow", "example_shadow_hook"]
