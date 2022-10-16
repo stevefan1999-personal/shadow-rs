@@ -1,4 +1,5 @@
-use std::collections::BTreeMap;
+use core::collections::BTreeMap;
+use alloc::string::{String, ToString};
 
 pub type ShadowConst = &'static str;
 
