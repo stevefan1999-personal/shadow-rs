@@ -170,11 +170,20 @@ use git::*;
 use crate::ci::CiType;
 pub use crate::data_time::DateTime;
 pub use const_format::*;
+
+#[cfg(feature = "std")]
 use std::collections::BTreeMap;
+#[cfg(feature = "std")]
 use std::env as std_env;
+#[cfg(feature = "std")]
 use std::fs::File;
+#[cfg(feature = "std")]
 use std::io::Write;
+#[cfg(feature = "std")]
 use std::path::Path;
+
+use alloc::string::String;
+use alloc::vec::Vec;
 
 use crate::gen_const::{
     clap_long_version_branch_const, clap_long_version_tag_const, clap_version_branch_const,
