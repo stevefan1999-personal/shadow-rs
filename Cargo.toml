@@ -21,7 +21,7 @@ all-features = true
 [dependencies]
 is_debug = { git = "https://github.com/stevefan1999-personal/rust_is_debug", branch = "patch-no-std", version = "1.0.1", features = ["alloc"] }
 const_format = "0.2.22"
-time = { version = "0.3.15", default-features = false, features = ["parsing"] }
+time = { version = "0.3.15", default-features = false, features = ["alloc", "parsing"] }
 
 #! Optional Dependencies:
 
